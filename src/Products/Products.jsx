@@ -21,7 +21,7 @@ function Products() {
 
     const matchesSearch = product.title
       .toLowerCase()
-      .includes(search.toLowerCase());
+      .includes(search.toLowerCase()) || product.company.toLowerCase().includes(search.toLowerCase());
 
     const matchesColor =
       colors === "All" || product.color.toLowerCase() === colors.toLowerCase();
@@ -35,8 +35,8 @@ function Products() {
       product.category.toLowerCase() === category.toLowerCase();
 
     return matchesSearch && matchesCategory && matchesColor && matchesPrice;
-  },[ maximumPrice, search,  minimumPrice, colors, category])
-  });
+  })
+  },[ maximumPrice, search,  minimumPrice, colors, category]);
 
   
   return (

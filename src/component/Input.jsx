@@ -66,13 +66,15 @@ function Input({type }) {
             type="radio"
             name="prices"
             className="w-4 h-4 appearance-none relative rounded-full border-2 border-gray-300 checked:border-blue-500 checked:bg-blue-500 checked:after:content-[''] checked:after:absolute checked:after:w-1.5 checked:after:h-1.5 checked:after:rounded-full checked:after:bg-white checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer"
-            onChange={() => dispatch(setMaximumPrice(200))}
+            onChange={() => {dispatch(setMaximumPrice(200));
+            dispatch(setMinimumPrice(0))}}
           />
           <span className="w-5 h-5 absolute top-0 left-0"></span>All
         </label>
         <label className="flex gap-3 relative items-center cursor-pointer font-serif">
           <input type="radio" name="prices"  className="w-4 h-4 appearance-none relative rounded-full border-2 border-gray-300 checked:border-blue-500 checked:bg-blue-500 checked:after:content-[''] checked:after:absolute checked:after:w-1.5 checked:after:h-1.5 checked:after:rounded-full checked:after:bg-white checked:after:top-1/2 checked:after:left-1/2 checked:after:-translate-x-1/2 checked:after:-translate-y-1/2 cursor-pointer" 
-          onChange={() => dispatch(setMaximumPrice(50))}
+          onChange={() => {dispatch(setMaximumPrice(50));
+            dispatch(setMinimumPrice(0))}}
           />
           <span className="w-5 h-5 absolute top-0 left-0"></span>$0 - $50
         </label>
